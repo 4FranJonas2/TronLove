@@ -1,7 +1,17 @@
 function love.load()
+
+
+
+
+player = {
+    posX = 0,
+    posY = 0,
+    speed = 12.5,
+}
 end
 
 function love.update()
+
 end
 
 function love.draw()
