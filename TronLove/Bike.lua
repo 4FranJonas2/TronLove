@@ -10,25 +10,12 @@ function CreateBike(speed, position, image)
     return Bike
 end
 
-function MoveBike(Bike, dt)
+function MoveBike(Bike, x, y, dt)
 
-    if love.keyboard.isDown("up") then
-        Bike.position.y = Bike.position.y - Bike.speed * dt
-     end
-
-     if love.keyboard.isDown("down") then
-        Bike.position.y = Bike.position.y + Bike.speed * dt
-     end
-
-     if love.keyboard.isDown("left") then
-        Bike.position.x = Bike.position.x - Bike.speed * dt
-     end
-
-     if love.keyboard.isDown("right") then
-        Bike.position.x = Bike.position.x + Bike.speed * dt
-     end
-
-     return Bike
+   Bike.position.y = Bike.position.y + Bike.speed * dt * y
+   Bike.position.x = Bike.position.x + Bike.speed * dt * x
+   return Bike
+   
 end
 
 function DrawBike(bike)
