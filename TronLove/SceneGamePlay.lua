@@ -3,8 +3,10 @@ local sceneGameplay = {}
 require ("Vector2D")
 require ("Player")
 
-local imgP1 = love.graphics.newImage("res/MouseBall.png")
-local imgP2 = love.graphics.newImage("res/MouseBall.png")
+local imgP1 = love.graphics.newImage("res/Player1Test.png")
+local imgP2 = love.graphics.newImage("res/Player1Test.png")
+
+
 
 local p1Pos = CreateVector2D(0,0)
 local p2Pos = CreateVector2D(0,0)
