@@ -5,7 +5,7 @@ function CreatePlayer(name, score, speed, position, image)
 
     player.name = name
     player.score = score
-    player.isAlive = false
+    player.isAlive = true
     player.knight = CreateKnight(speed, position, image)
 
     return player
