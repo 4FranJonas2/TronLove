@@ -51,8 +51,8 @@ function mainMenu.updateMenu()
 end
 
 function mainMenu.drawMenu()
- love.graphics.print(mainMenu.playButton)
- love.graphics.print(mainMenu.creditButton)
+ --love.graphics.draw(mainMenu.playButton)
+ --love.graphics.draw(mainMenu.creditButton)
 end
 
 return mainMenu

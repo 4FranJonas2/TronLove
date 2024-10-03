@@ -1,15 +1,31 @@
 
-function love.load()
+local game = {
+    state = {
+        menu = true,
+        endGamePause = false,
+        ended = false
+    },
+}
 
+local mouse = {
+    x = 30,
+    y = 30
+}
+
+function love.load()
+    love.window.setTitle("Game name")
+    mouseBall = love.graphics.newImage("res/MouseBall.png")
    mainMenu = require 'mainMenu'
 
 end
 
 function love.update()
+    mouse.x, mouse.y = love.mouse.getPosition()
 end
 
 function love.draw()
     love.graphics.print("Cacho is everywhere", 400, 300)
     love.graphics.setBackgroundColor(0,0,0)
+    love.graphics.draw(mouseBall, mouse.x, mouse.y, 10)
     mainMenu.drawMenu()
 end
