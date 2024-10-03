@@ -54,8 +54,8 @@ function sceneGameplay.Update(dt)
 end
 
 function sceneGameplay.Draw()
-    love.graphics.draw(player1.image, player1.position.x, player1.position.y)
-    love.graphics.draw(player2.image, player2.position.x, player2.position.y)
+    love.graphics.draw(player1.knight.image, player1.knight.position.x, player1.knight.position.y)
+    love.graphics.draw(player2.knight.image, player2.knight.position.x, player2.knight.position.y)
 end
 
 return sceneGameplay
