@@ -1,5 +1,8 @@
 local sceneGameplay = {}
 
+require ("Vector2D")
+require ("Player")
+
 function sceneGameplay.Init()
 
     sceneGameplay.tiles = {}
