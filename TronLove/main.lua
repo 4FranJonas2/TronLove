@@ -3,8 +3,8 @@ local mouseMenu = require ("mouse")
 
 local game = {
     state = {
-        menu = true,
-        running = false,
+        menu = false,
+        running = true,
         endGamePause = false,
         ended = false
     }
@@ -25,8 +25,14 @@ function love.load()
 end
 
 function love.update(dt)
-    mouseMenu.Update(dt)
-    SceneGameplay.Update(dt)
+
+    if  game.state["menu"]then
+        mouseMenu.Update(dt)
+    end
+
+    if  game.state["running"]then
+        SceneGameplay.Update(dt)
+    end
 end
 
 function love.draw()
