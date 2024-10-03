@@ -5,11 +5,11 @@ function sceneGameplay.Init()
     sceneGameplay.tiles = {}
     sceneGameplay.scores = "0 | 0"
 
-    local imgP1 = love.graphics.newImage("")
-    local imgP2 = love.graphics.newImage("")
+    local imgP1 = love.graphics.newImage("res/MouseBall.png")
+    local imgP2 = love.graphics.newImage("res/MouseBall.png")
 
-    local player1 = CreatePlayer("Cacho", 0, 5, CreateVector2D(0,0), "")
-    local player2 = CreatePlayer("Pato", 0, 5, CreateVector2D(0,0), "")
+    local player1 = CreatePlayer("Cacho", 0, 5, CreateVector2D(0,0), "imgP1")
+    local player2 = CreatePlayer("Pato", 0, 5, CreateVector2D(0,0), "imgP2")
 end
 
 function sceneGameplay.Input()

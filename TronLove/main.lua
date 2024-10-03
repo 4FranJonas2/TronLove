@@ -18,15 +18,15 @@ function love.load()
     --INIT SETTINGS
     love.window.setTitle("Game name")
     love.mouse.setVisible(false)
-    love.setMode(200, 200, nill)
+    --love.setMode(200, 200, nill)
     --INIT MOUSE
     mouseMenu.Init()
-
+    SceneGameplay.Init()
 end
 
 function love.update(dt)
     mouseMenu.Update(dt)
-
+    SceneGameplay.Update(dt)
 end
 
 function love.draw()
@@ -41,6 +41,6 @@ function love.draw()
 
     if  game.state["running"]then
            
-       
+       SceneGameplay.Draw()
     end
 end
