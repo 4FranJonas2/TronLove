@@ -1,11 +1,10 @@
-
 function CreateKnight(speed, position, image)
     local knight = {}
 
     knight.speed = 0
     knight.position = position
 
-    knight.image = image
+    knight.image = love.graphics.newImage("res/Player1Test.png")
 
     return knight
 end
@@ -16,6 +15,6 @@ function MoveKnight(knight, x, y, dt)
    return knight
 end
 
-function DrawBike(knight)
+function DrawKnight(knight)
     love.graphics.draw(knight.image, knight.position.x, knight.position.y)
 end

@@ -1,5 +1,5 @@
 local SceneGameplay = require ("sceneGameplay")
-local mainMenu = require ("mainMenu")
+local mouseMenu = require ("mouse")
 
 local game = {
     state = {
@@ -18,22 +18,24 @@ function love.load()
     --INIT SETTINGS
     love.window.setTitle("Game name")
     love.mouse.setVisible(false)
+    love.setMode(200, 200, nill)
+    --INIT MOUSE
+    mouseMenu.Init()
 
 end
 
 function love.update(dt)
-
-    
+    mouseMenu.Update(dt)
 
 end
 
 function love.draw()
     love.graphics.setBackgroundColor(0,0,0)
-    mainMenu.drawMenu()
     screenWidth = love.graphics.getWidth()
     screenHeight = love.graphics.getHeight()
-
+    
     if  game.state["menu"]then
+        mouseMenu.Draw()
         
     end
 

@@ -13,20 +13,15 @@ function mouseMenu.Init()
 
     mouseBall.animation = {}
     mouseBall.animation.idle = anim8.newAnimation(mouseBall.grid('1-8', 1), 0.2)
-
 end
 
 function mouseMenu.Update(dt)
     mouse.x, mouse.y = love.mouse.getPosition()
     mouseBall.animation.idle:update(dt)
-
 end
 
 function mouseMenu.Draw()
-
-    --love.graphics.draw(mouseBall.spriteSheet, mouse.x, mouse.y, 10)
-    mouseBall.animation.idle:draw(mouseBall.spriteSheet, mouse.x, mouse.y, nill, 10)
-
+    mouseBall.animation.idle:draw(mouseBall.spriteSheet, mouse.x, mouse.y, nill)
 end
 
 return mouseMenu
