@@ -2,6 +2,7 @@
 local game = {
     state = {
         menu = true,
+        running = false,
         endGamePause = false,
         ended = false
     },
@@ -24,8 +25,14 @@ function love.update()
 end
 
 function love.draw()
-    love.graphics.print("Cacho is everywhere", 400, 300)
     love.graphics.setBackgroundColor(0,0,0)
-    love.graphics.draw(mouseBall, mouse.x, mouse.y, 10)
     mainMenu.drawMenu()
+    
+    if  game.state["menu"]then
+        love.graphics.draw(mouseBall, mouse.x, mouse.y, 10)
+    end
+
+    if  game.state["running"]then
+            
+    end
 end
