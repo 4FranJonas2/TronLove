@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 local game = {
     state = {
@@ -36,3 +37,6 @@ function love.draw()
             
     end
 end
+=======
+require ("SceneManager")
+>>>>>>> 42b2df7c6ad79e3624e00fa439ef164e67da1df0
