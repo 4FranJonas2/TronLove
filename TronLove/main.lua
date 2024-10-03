@@ -1,4 +1,4 @@
-local SceneGameplay = require ("sceneGameplay")
+local SceneGameplay = require ("SceneGameplay")
 local mouseMenu = require ("mouse")
 
 local game = {
@@ -40,7 +40,7 @@ function love.draw()
     end
 
     if  game.state["running"]then
-           
-       SceneGameplay.Draw()
+
+        SceneGameplay.Draw()
     end
 end
