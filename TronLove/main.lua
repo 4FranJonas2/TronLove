@@ -1,10 +1,12 @@
 local SceneGameplay = require ("SceneGameplay")
-local mouseMenu = require ("mouse")
+local SceneMenu = require ("SceneMenu")
+local SceneCredits = require ("SceneCredits")
 
-local game = {
+game = {
     state = {
-        menu = false,
-        running = true,
+        menu = true,
+        running = false,
+        credits = false,
         endGamePause = false,
         ended = false
     }
@@ -16,22 +18,30 @@ function love.load()
     anim8 = require ("libraries/anim8")
     love.graphics.setDefaultFilter("nearest","nearest")
     --INIT SETTINGS
-    love.window.setTitle("Game name")
+    love.window.setTitle("Los cachos Peleadores")
     love.mouse.setVisible(false)
     --love.setMode(200, 200, nill)
     --INIT MOUSE
-    mouseMenu.Init()
+    SceneMenu.Init()
     SceneGameplay.Init()
+    SceneCredits.Init()
 end
 
 function love.update(dt)
 
-    if  game.state["menu"]then
-        mouseMenu.Update(dt)
+    if  game.state["menu"] then
+        SceneMenu.Input()
+        SceneMenu.Update(dt)
     end
 
-    if  game.state["running"]then
+    if  game.state["running"] then
+        SceneGameplay.Input()
         SceneGameplay.Update(dt)
+    end
+
+    if game.state["credits"] then
+        SceneCredits.Input()
+        SceneCredits.Update(dt)
     end
 end
 
@@ -40,13 +50,15 @@ function love.draw()
     screenWidth = love.graphics.getWidth()
     screenHeight = love.graphics.getHeight()
     
-    if  game.state["menu"]then
-        mouseMenu.Draw()
-        
+    if  game.state["menu"] then
+        SceneMenu.Draw()
     end
 
-    if  game.state["running"]then
-
+    if  game.state["running"] then
         SceneGameplay.Draw()
+    end
+
+    if game.state["credits"] then
+        SceneCredits.Draw()
     end
 end
